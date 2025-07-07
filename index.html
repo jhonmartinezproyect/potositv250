@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PTV en Vivo</title>
+  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: url('fondo.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+    header {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header img {
+      max-height: 160px;
+      width: auto;
+    }
+    .live-stream {
+      text-align: center;
+      padding: 2rem;
+      background-color: #222;
+    }
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 90%;
+      margin: auto;
+      border: 4px solid red;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Bloque conjunto con fondo para Noticias + Programación */
+    .bloque-programacion {
+      background: url("fondo.PNG") no-repeat center center;
+      background-size: cover;
+      position: relative;
+      z-index: 1;
+    }
+    .bloque-programacion::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: -1;
+    }
+    .bloque-programacion .features,
+    .bloque-programacion .programs {
+      background: none;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature, .program {
+      max-width: 400px;
+      margin: 1rem;
+    }
+    .feature h3, .program h3 {
+      color: #c00;
+    }
+    .programs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .program {
+      border-bottom: 1px solid #333;
+      padding-bottom: 1rem;
+    }
+
+    .comments-section {
+      background-color: #000;
+      padding: 2rem;
+    }
+    .comment-box {
+      margin-top: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .comment-box textarea {
+      width: 100%;
+      height: 100px;
+      padding: 1rem;
+      border: 1px solid #444;
+      border-radius: 5px;
+      background-color: #111;
+      color: #fff;
+    }
+    .comment-box button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #c00;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    #comments-list {
+      margin-top: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .social-buttons {
+      text-align: center;
+      padding: 2rem;
+      background-color: #111;
+    }
+    .social-buttons a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+    .facebook { background-color: #3b5998; }
+    .youtube { background-color: #ff0000; }
+    .tiktok  { background-color: #000; border: 1px solid #fff; }
+    .whatsapp { background-color: #25D366; }
+
+    .objectives {
+      padding: 2rem;
+      background-color: #000;
+      text-align: center;
+    }
+    .objectives h2 { color: #c00; }
+    .objectives p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+
+  <img src="LOGO PTV NL.png" alt="Logo PTV" />
+</header>
+
+<section class="live-stream">
+  <h2>Transmisión en Vivo</h2>
+  <div class="video-responsive">
+    <iframe 
+      src="https://www.youtube.com/embed/KbqR2QnysKE?autoplay=1" 
+      allow="autoplay; encrypted-media" 
+      allowfullscreen 
+      frameborder="0">
+    </iframe>
+  </div>
+</section>
+
+
+<div class="bloque-programacion">
+  <section class="features">
+    <div class="feature"><h3>ÚLTIMAS NOTICIAS</h3><p>Actualizaciones desde Potosí y el mundo.</p></div>
+    <div class="feature"><h3>REPORTAJES</h3><p>Historias con profundidad e impacto local.</p></div>
+    <div class="feature"><h3>NOTICIAS VERIFICADAS</h3><p>Información confiable y sin sensacionalismo.</p></div>
+  </section>
+
+  <section class="programs">
+    <div class="program"><h3>Buenos Días Potosí</h3><p>06:00 AM - Noticias matutinas</p></div>
+    <div class="program"><h3>PTV Noticias</h3><p>12:00 PM - Informativo del medio día</p></div>
+    <div class="program"><h3>Enlace Nocturno</h3><p>08:00 PM - Resumen del día</p></div>
+    <div class="program"><h3>Deportes al Día</h3><p>10:00 PM - Deportes locales y nacionales</p></div>
+  </section>
+</div>
+
+<section class="comments-section">
+  <h2>Comentarios del Público</h2>
+  <div class="comment-box">
+    <textarea id="comment-input" placeholder="Escribe tu comentario..."></textarea>
+    <button onclick="addComment()">Enviar</button>
+  </div>
+  <div id="comments-list"></div>
+</section>
+
+<section class="social-buttons">
+  <a href="https://www.facebook.com/tu_pagina" target="_blank" class="facebook">Facebook</a>
+  <a href="https://www.youtube.com/@tu_canal" target="_blank" class="youtube">YouTube</a>
+  <a href="https://www.tiktok.com/@tu_usuario" target="_blank" class="tiktok">TikTok</a>
+  <a href="https://wa.me/591XXXXXXX" target="_blank" class="whatsapp">WhatsApp</a>
+</section>
+
+<section class="objectives">
+  <h2>Objetivos del Canal</h2>
+  <p>En PTV nos comprometemos a informar con veracidad, promover la identidad cultural de Potosí y ofrecer una plataforma abierta a todas las voces de la sociedad.</p>
+</section>
+
+<footer>
+  &copy; 2025 PTV Bolivia. Todos los derechos reservados.
+</footer>
+
+<script>
+  function addComment() {
+    const input = document.getElementById('comment-input');
+    const commentText = input.value.trim();
+    if (commentText === "") return;
+
+    const commentList = document.getElementById('comments-list');
+    const comment = document.createElement('div');
+    comment.style.padding = '1rem';
+    comment.style.borderBottom = '1px solid #333';
+    comment.style.backgroundColor = '#111';
+    comment.style.color = '#fff';
+    comment.innerText = commentText;
+    commentList.prepend(comment);
+
+    input.value = "";
+  }
+</script>
+
+<script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+</body>
+</html>
